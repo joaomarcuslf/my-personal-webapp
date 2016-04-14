@@ -1,5 +1,4 @@
 # My Web App using Rails
----
 
 My website: [**@joaomarcuslf**](http://joaomarcuslf.github.io/)
 
