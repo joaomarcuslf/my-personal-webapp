@@ -24,12 +24,12 @@
             <span class="icon-bar"></span>
           </button>
           <%= image_tag "outerworldcodes.png", alt: "OWC logo", class: "img-reponsive img-rounded outer-img", size: "50x50" %>
-          <%= link_to "OuterWorldCodes", '#', class: "nav-title" %>
+          <%= link_to "OuterWorldCodes", root_path, class: "nav-title" %>
         </div>
         <div class="nav-tabs navbar-collapse collapse navbar-right text-center">
           <ul class="nav navbar-nav">
-            <li> <%= link_to "Home", "#", class: status(yield(:title), "Home") %> </li>
-            <li><%= link_to "About", "#", class: status(yield(:title), "About") %></li>
+            <li> <%= link_to "Home", home_path, class: status(yield(:title), "Home") %> </li>
+            <li><%= link_to "About", about_path, class: status(yield(:title), "About") %></li>
             <li><%= link_to "Contact", "#", class: status(yield(:title), "Contact") %></li>
           </ul>
         </div>
