@@ -19,6 +19,7 @@ group :development, :test do
   gem 'spring',             '1.1.3'
   gem 'pry-rails',          '~> 0.3.4'
   gem 'rspec-rails',        '~> 3.0'
+  gem 'guard-rspec', require: false
 end
 
 group :test do
