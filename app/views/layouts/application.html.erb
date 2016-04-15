@@ -7,10 +7,36 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </meta>script>
+    <![endif]-->
   </head>
   <body>
-
-  <%= yield %>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav nav-tabs navbar-right tab-content">
+            <li> <%= link_to "Home", "#", class: status(yield(:title), "Home") %> </li>
+            <li><%= link_to "About", "#", class: status(yield(:title), "About") %></li>
+          </ul>
+        </div>
+        <img alt="OWC logo" src="/assets/outerworldcodes.png" height="60px">
+        <%= link_to "OuterWorldCodes", '#', id: "logo" %>
+      </div>
+    </nav>
+    <div class="container">
+      <%= yield %>
+    </div>
 
   </body>
 </html>
+

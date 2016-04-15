@@ -1,0 +1,24 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.short-line {
+  width: 40%;
+  margin: 0 auto;
+}
+
+section {
+  overflow: auto;
+}
+
+.jumbotron {
+  h1.text-center {
+    font-size: 1.9em;
+    letter-spacing: 0.1em;
+  }
+}
