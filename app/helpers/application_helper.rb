@@ -8,7 +8,7 @@ module ApplicationHelper
       end
   end
   def status(page_title, link)
-    default = "tab-pane"
+    default = "tabs"
     if page_title == link
       default = default + " active"
     end
