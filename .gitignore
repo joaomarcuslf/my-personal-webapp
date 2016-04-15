@@ -5,3 +5,5 @@
 !/log/.keep
 /tmp
 /spring/*.pid
+/.vagrant
+/cookbooks
