@@ -1,10 +1,22 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$outer-color: #ffff00;
+$outer-bg: #8b008b;
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #f0ffff;
+  min-height: 100%;
 }
 
 .short-line {
@@ -17,9 +29,21 @@ section {
 }
 
 .jumbotron {
+  margin-top: -5px;
   h1.text-center {
     font-size: 1.9em;
-    letter-spacing: 0.1em;
+    letter-spacing: -0.1px;
+  }
+}
+.navbar-default {
+  .navbar-toggle {
+    border-color: aliceblue;
+    .icon-bar {
+      background-color: aliceblue;
+    }
+    &:hover {
+      background-color: #008647;
+    }
   }
 }
 
@@ -54,14 +78,14 @@ section {
 }
 
 .navbar-default {
-  background: #8b008b;
+  background: $outer-bg;
   border: 1px groove #4b0082;
   .navbar-nav {
     padding-top: 1.4em;
     margin-bottom: 0px;
     li {
       a.tabs {
-        color: #ffff00;
+        color: $outer-color;
         font-weight: bold;
         &.active {
           color: #131411;
@@ -81,4 +105,93 @@ section {
       }
     }
   }
+}
+
+
+.foot-page {
+  bottom:0;
+  padding: 0.5em;
+  min-height: 60px;
+  background-color: $outer-bg;
+  color: $outer-color;
+  width: 100%;
+
+  .row {
+    width: 90%;
+    margin: 0 auto;
+    .foot-parag {
+      text-align: center;
+      margin: 0 auto;
+      font-size: 1.5em;
+      font-family: impact;
+      height: 100%;
+    }
+    .striked {
+      text-decoration: line-through;
+    }
+  }
+  .foot-list {
+    list-style-type: none;
+    .list-elm {
+      color: $outer-color;
+      &:hover {
+        font-family: impact;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+.jumbotron {
+  margin-top: -5px;
+  h1.text-center {
+    font-size: 1em;
+    letter-spacing: -0.1px;
+  }
+}
+.foot-page {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: $outer-bg;
+  color: $outer-color;
+
+  img {
+    height: 35px;
+    width: 30px;
+  }
+  .row {
+    width: 100%;
+    margin: 0 auto;
+    .foot-parag {
+      text-align: center;
+      font-size: 0.8em;
+      font-family: impact;
+      letter-spacing: -0.1px;
+    }
+    .striked {
+      text-decoration: line-through;
+    }
+    .col-xs-12 {
+      margin-top: 5px;
+      .line-divisor {
+        border-top: 1px groove aliceblue;
+        opacity: 0.6;
+      }
+    }
+  }
+  .foot-list {
+    list-style-type: none;
+    text-align: center;
+    .list-elm {
+      display: inline;
+      font-size: 11px;
+      float: left;
+      $pad: 4px;
+      padding-right: $pad;
+      &:hover {
+        font-family: none;
+      }
+    }
+  }
+}
 }

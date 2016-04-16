@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= render 'layouts/metas' %>
     <title><%= full_title(yield(:title)) %></title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-
-    <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </meta>script>
-    <![endif]-->
+    <%= render 'layouts/shim' %>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -40,6 +35,25 @@
       <%= yield %>
     </div>
 
+
+    <footer class="foot-page">
+      <div class="row">
+        <div class="col-md-1 col-xs-3">
+          <%= image_tag "alienhead.png", alt: "Alien Head", class: "img-responsive", size: "45x30" %>
+        </div>
+        <div class="col-md-9 col-xs-9">
+          <p class="foot-parag"> We see <span class="striked">from other space</span> out-of-the-box</p>
+        </div>
+        <div class="col-md-2 col-xs-12">
+          <hr class="line-divisor hidden-sm hidden-md hidden-lg">
+          <ul class="foot-list">
+            <li><%= link_to "Equipe", "#", class: "list-elm" %></li>
+            <li><%= link_to "Trabalhe Conosco", "#", class: "list-elm" %></li>
+            <li><%= link_to "Projetos", "#", class: "list-elm" %></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
 
