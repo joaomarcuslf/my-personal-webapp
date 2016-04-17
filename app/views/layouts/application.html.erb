@@ -25,7 +25,7 @@
           <ul class="nav navbar-nav">
             <li> <%= link_to "Home", home_path, class: status(yield(:title), "Home") %> </li>
             <li><%= link_to "About", about_path, class: status(yield(:title), "About") %></li>
-            <li><%= link_to "Contact", "#", class: status(yield(:title), "Contact") %></li>
+            <li><%= link_to "Contact", contact_path, class: status(yield(:title), "Contact") %></li>
           </ul>
         </div>
       </div>

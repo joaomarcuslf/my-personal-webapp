@@ -1,9 +1,72 @@
 <% provide(:title, "Home") %>
 <section class="jumbotron">
-  <h1 class="text-center">We are from Other Space<br>
-      We are from Other Galaxy<br>
-      We are from Other World
+  <h1 class="text-center">
+    <%= @present_phrase %>
   </h1>
 </section>
+<div class="row">
+  <div class="col-md-6">
+    <canvas id="alien-canva">
+      <script >
+        var canvas = document.getElementById("alien-canva");
+        var canvas = document.querySelector("#alien-canva");
+        var context = canvas.getContext("2d");
+        var ctx = context;
+        var canvasPos = getPosition(canvas);
+        var mouseX = 0;
+        var mouseY = 0;
+        var bg = new Image();
+        bg.src = 'assets/space.jpeg';
 
+        var prob = function(total, desejavel) {
+          return (total*desejavel)/100;
+        }
+        
+        function setMousePosition(e) {
+            mouseX = e.clientX - canvasPos.x;
+            mouseY = e.clientY - canvasPos.y;
+        } 
+        function getPosition(el) {
+          var xPosition = 0;
+          var yPosition = 0;
+ 
+          while (el) {
+            xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
+            yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
+            el = el.offsetParent;
+          }
+          return {
+            x: xPosition,
+            y: yPosition
+          };
+        }       
+
+        var ship = {
+          img:  new Image(),
+          width: prob(canvas.width, 10),
+          height: prob(canvas.height, 10)
+        }
+        ship.img.src = 'assets/nave.png';
+
+      function draw() {
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          context.drawImage(bg, 0, 0, canvas.width, canvas.height);
+          context.drawImage(ship.img, mouseX, mouseY, ship.width, ship.height);
+          requestAnimationFrame(update);
+      }
+      function start() {
+        canvas.addEventListener("mousemove", setMousePosition, false);
+        draw();
+      }
+      start();
+
+      </script>
+    </canvas>
+  </div>
+  <div class="col-md-6">
+    Blha
+  </div>
+</div>
+
+<br>
 
