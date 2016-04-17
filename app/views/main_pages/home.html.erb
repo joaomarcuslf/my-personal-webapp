@@ -21,15 +21,14 @@
         var prob = function(total, desejavel) {
           return (total*desejavel)/100;
         }
-        
         function setMousePosition(e) {
             mouseX = e.clientX - canvasPos.x;
             mouseY = e.clientY - canvasPos.y;
-        } 
+        }
         function getPosition(el) {
           var xPosition = 0;
           var yPosition = 0;
- 
+
           while (el) {
             xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
             yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
@@ -39,8 +38,7 @@
             x: xPosition,
             y: yPosition
           };
-        }       
-
+        }
         var ship = {
           img:  new Image(),
           width: prob(canvas.width, 10),
@@ -58,6 +56,8 @@
         canvas.addEventListener("mousemove", setMousePosition, false);
         draw();
       }
+
+      function update() {}
       start();
 
       </script>
