@@ -4,67 +4,18 @@
     <%= @present_phrase %>
   </h1>
 </section>
-<div class="row">
+<div class="row banner-area">
   <div class="col-md-6">
-    <canvas id="alien-canva">
-      <script >
-        var canvas = document.getElementById("alien-canva");
-        var canvas = document.querySelector("#alien-canva");
-        var context = canvas.getContext("2d");
-        var ctx = context;
-        var canvasPos = getPosition(canvas);
-        var mouseX = 0;
-        var mouseY = 0;
-        var bg = new Image();
-        bg.src = 'assets/space-0d38896515d873c640dacd7c672af46eb1abc1dba223a24bb43bcc228da1aa6b.jpeg';
-
-        var prob = function(total, desejavel) {
-          return (total*desejavel)/100;
-        }
-        function setMousePosition(e) {
-            mouseX = e.clientX - canvasPos.x;
-            mouseY = e.clientY - canvasPos.y;
-        }
-        function getPosition(el) {
-          var xPosition = 0;
-          var yPosition = 0;
-
-          while (el) {
-            xPosition += (el.offsetLeft - el.scrollLeft + el.clientLeft);
-            yPosition += (el.offsetTop - el.scrollTop + el.clientTop);
-            el = el.offsetParent;
-          }
-          return {
-            x: xPosition,
-            y: yPosition
-          };
-        }
-        var ship = {
-          img:  new Image(),
-          width: prob(canvas.width, 10),
-          height: prob(canvas.height, 10)
-        }
-        ship.img.src = 'assets/nave-412feee462dfae6f7ace82d296dea3b5600f51ecad62d8eb34dd1cf92836ec8f.png';
-
-      function draw() {
-          context.clearRect(0, 0, canvas.width, canvas.height);
-          context.drawImage(bg, 0, 0, canvas.width, canvas.height);
-          context.drawImage(ship.img, mouseX, mouseY, ship.width, ship.height);
-          requestAnimationFrame(update);
-      }
-      function start() {
-        canvas.addEventListener("mousemove", setMousePosition, false);
-        draw();
-      }
-
-      function update() {}
-      start();
-
-      </script>
-    </canvas>
+    <%= image_tag "banner-alien.jpeg", alt: 'Banner Alien', class: "img-responsive banner-img" %>
   </div>
   <div class="col-md-6">
-    Blha
+    <p class="title-banner text-center">Quality</p>
+    <p class="banner-parag">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis convallis elit. Suspendisse vehicula leo eget sapien porttitor euismod. Aliquam mauris sapien, mattis ut sagittis eu, volutpat ac lectus. Fusce venenatis congue ornare. Vestibulum cursus gravida quam vel auctor.
+    </p>
+    <p class="banner-parag">
+      Donec eu tempus augue, vel lobortis ex. Sed aliquam feugiat lectus gravida ullamcorper. Sed at efficitur elit, vitae cursus erat. Quisque dictum felis eros, in hendrerit ante ultricies nec. Donec semper risus nec auctor semper. Donec vitae ex ut massa tempor mollis.
+    </p>
   </div>
 </div>
 
