@@ -5,7 +5,7 @@ describe "Viewing home page" do
     visit "/home"
 
     within("section.jumbotron h1.text-center") do
-      expect(page).to have_content("We are from Other Space We are from Other Galaxy We are from Other World")
+      expect(page).to have_content("We are from")
    end
    title_expect "Home"
   end
